@@ -67,7 +67,7 @@ NAVIGATION
 nav {
   text-align:center;
   padding:10px 0;
-  margin:20px 0 0;
+  margin:50px 0 0;
 }
 
 nav ul {
@@ -83,7 +83,7 @@ nav li {
 nav a {
   font-weight:800;
   padding:15px 10px;
-  font-family:#fff;
+  color:#fff;
 }
 
 
@@ -211,7 +211,7 @@ h1,h2 {
 /*links*/
 a {
  
- color:#6ab47b;
+ color:#fff;
 }
 
 #logo {
