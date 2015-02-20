@@ -43,8 +43,12 @@
    /******************
    HEADER
     ****************/  
+    
+    nav {
+        display:flex;
+    }
   
-  nav {
+ /* nav {
     
     background:none;
     float:right;
@@ -53,7 +57,7 @@
     text-align:right;
     width: 45%;
     margin-bottom:0%;
-  }
+  }*/
   
   #logo {
     float:left;
