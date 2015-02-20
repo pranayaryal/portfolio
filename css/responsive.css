@@ -44,6 +44,7 @@
    HEADER
     ****************/  
     
+    /*was trying to use flex
     nav {
         display:flex;
         display: -webkit-flex;
@@ -55,8 +56,9 @@
     nav ul{
     	-webkit-flex-grow:1;
     }
+    */
   
- /* nav {
+   nav {
     
     background:none;
     float:right;
@@ -65,7 +67,7 @@
     text-align:right;
     width: 45%;
     margin-bottom:0%;
-  }*/
+  }
   
   #logo {
     float:left;
