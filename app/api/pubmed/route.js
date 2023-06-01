@@ -58,11 +58,11 @@ export async function GET() {
       return NextResponse.json({ summaries , error: ""})
 
     }
-    return NextResponse({error: "No PMIDs were found for that search"})
+    return NextResponse.json({error: "No PMIDs were found for that search"})
 
   } catch (error) {
     console.log('you landed here')
-    return NextResponse({error: error, status: 500});
+    return NextResponse.json({error: error, status: 500});
   }
 
 };
