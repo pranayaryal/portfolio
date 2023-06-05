@@ -73,7 +73,7 @@ export default function Pubmed() {
             <div className="mt-4">
                 API keys can be obtained from
                 <a href="http://www.ncbi.nlm.nih.gov/account"
-                    target="_blank" className='break-words text-indigo-100'> http://www.ncbi.nlm.nih.gov/account/</a>
+                    target="_blank" className='break-words text-indigo-500'> http://www.ncbi.nlm.nih.gov/account/</a>
                 after you create an account
             </div>
             <div className="mt-4">
