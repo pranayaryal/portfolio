@@ -1,13 +1,17 @@
 import Image from 'next/image'
 import StepLargeCustom from '../../components/StepLargeCustom'
 import HighlightBox from '../../components/HighLightBox'
-import WebEnv from '../../components/webenv'
+import WebEnv from '../../components/webEnv'
 
 
 
 export default function Pubmed() {
+    const rateLimitError = {
+        "error": `API rate limit exceeded`,
+        "count": 11,
+    }
     return (
-        <div className="lg:max-w-[650px]">
+        <div className="lg:max-w-[650px] text-lg">
             <div className="flex items-center space-x-2">
                 <Image
                     alt="Pranay Aryal"
@@ -44,7 +48,7 @@ export default function Pubmed() {
             </div>
             <div className="mt-4">
                 The <strong>base URI</strong> for the API is
-                <span className="bg-green-100 rounded"> https://eutils.ncbi.nlm.nih.gov/entrez/eutils/</span>
+                <span className="bg-green-100 rounded break-words"> https://eutils.ncbi.nlm.nih.gov/entrez/eutils/</span>
             </div>
             <div className='mt-4'>
                 <span>See the demo </span>
@@ -68,7 +72,8 @@ export default function Pubmed() {
             <StepLargeCustom number="1" title="API Key" className='mt-8' />
             <div className="mt-4">
                 API keys can be obtained from
-                <a href="http://www.ncbi.nlm.nih.gov/account" target="_blank"> http://www.ncbi.nlm.nih.gov/account/</a>
+                <a href="http://www.ncbi.nlm.nih.gov/account"
+                    target="_blank" className='break-words text-indigo-100'> http://www.ncbi.nlm.nih.gov/account/</a>
                 after you create an account
             </div>
             <div className="mt-4">
@@ -76,50 +81,38 @@ export default function Pubmed() {
             </div>
             <div className="mt-4">
                 Example request including an API key:
-                <p className="mt-4">
-                    <code className="bg-pink-100 rounded">esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345</code>
+                <p className="mt-4 break-words">
+                    {/* <code className="bg-pink-100 rounded">esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345</code> */}
+                    esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345
                 </p>
             </div>
             <p className="mt-4">
                 Example error message if rates are exceeded:
             </p>
-            <div className="mt-4 border border-gray-200 rounded bg-gray-50 h-16 py-4 px-8">
-
-                <code>
-
-                    <span>{`{`}</span>
-                    <span className="token property">{" error"}</span>
-                    <span className="token operator">{":"}</span>
-                    <span className="token string">{" API rate limit exceeded"}</span>
-                    <span className="token punctuation">{","}</span>
-                    <span className="token property">{" count"}</span>
-                    <span className="token operator">{":"}</span>
-                    <span className="token string">{" 11"}</span>
-                    <span className="token punctuation">{` }`}</span>
-                </code>
-            </div>
+            <pre className='text-sm md:text-normal px-4 py-4 break-words mt-4 border rounded-xl border-gray-200 bg-gray-50'>{JSON.stringify(rateLimitError, null, 2)}</pre>
             <br />
             <hr className='my-4' />
             <StepLargeCustom number="2" title="Basic Searching" className='mt-16' />
-            <div className='mt-4 flex space-x-2'>
-                <p>Endpoint:</p>
-                <span className="bg-pink-100 rounded">{` esearch.fcgi?db=<database>&term=<query>`}</span>
+            <div className='mt-4 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2'>
+                <p><HighlightBox>Endpoint:</HighlightBox></p>
+                <span className="bg-pink-100 rounded px-4 py-2 md:p-0">{`esearch.fcgi?db=<database>&term=<query>`}</span>
             </div>
             <div className="mt-4">
                 By utilizing this API endpoint, you can initiate a search for a specific term, and in response, you will receive a collection of UIDs, which serve as unique identifiers for articles.
             </div>
-            <p className='mt-4'>Functions: Provides a list of UIDs matching a text query.</p>
-            <p className='mt-4'>UID: Unique Identifier</p>
-            <p className='mt-4'>BaseUrl: <span className="bg-pink-100 rounded">{` https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed`}</span></p>
-            <p className='mt-4'>Output: Lit of UIDs matching a query</p>
-            <p className='mt-4'>Example:
+            <p className='mt-4'><HighlightBox className='font-semibold'>Functions:</HighlightBox> Provides a list of UIDs matching a text query.</p>
+            <p className='mt-4'><HighlightBox>UID:</HighlightBox> Unique Identifier</p>
+            <p className='mt-4'>BaseUrl: 
+                <span className="bg-pink-100 rounded break-words">{` https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed`}</span></p>
+            <p className='mt-4'><HighlightBox className='font-semibold'>Output:</HighlightBox>List of UIDs matching a query</p>
+            <p className='mt-4'><HighlightBox>Example:</HighlightBox>
                 {` Get the PubMed IDs (PMIDs) for articles about breast cancer published in Science in 2008`}
             </p>
-            <p className='mt-4'>Uri:
+            <p className='mt-4'><HighlightBox>Uri:</HighlightBox>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&retmode=json" target="_blank"
-                    className="text-indigo-500"
+                    className="text-indigo-500 break-words"
                 >
-                    {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]`}
+                    {` https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]`}
                     <span className="text-indigo-800">{`&retmode=json`}</span>
                 </a>
             </p>
@@ -139,19 +132,22 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <span className="bg-pink-100 rounded">{`esearch.fcgi?db=<database>&term=<query>&usehistory=y`}</span>
             </div>
-            <p className='mt-4'>Input:
+            <p className='mt-4'>
+                <HighlightBox className='font-semibold'>Input:</HighlightBox>
                 {` Any query; Entrez database (&db); &usehistory=y`}
             </p>
-            <p className='mt-4'>Output:
+            <p className='mt-4'>
+                <HighlightBox className='font-semibold'>Output:</HighlightBox>
                 {` Web environment (&WebEnv) and query key (&query_key).`}
             </p>
-            <p className='mt-4'>Example:
+            <p className='mt-4'>
+                <HighlightBox className='font-semibold'>Example:</HighlightBox>
                 {` Get the PubMed IDs (PMIDs) for articles about breast cancer published in Science in 2008.`}
             </p>
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&usehistory=y"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]`}
                     <span className="text-indigo-800">{`&usehistory=y`}</span>
                 </a>
@@ -166,7 +162,7 @@ export default function Pubmed() {
                 Use <strong>WebEnvId</strong> in a subsequent request like this:
             </div>
             <div className='mt-4'>
-                <span className="bg-pink-100 rounded">{`esearch.fcgi?db=<database>&term=<query2>&usehistory=y&WebEnv=$web1`}</span>
+                <span className="bg-pink-100 rounded break-words">{`esearch.fcgi?db=<database>&term=<query2>&usehistory=y&WebEnv=$web1`}</span>
             </div>
             <div className='mt-4'>
                 Use the "epost" endpoint to save a set of UIDs in the database
@@ -174,14 +170,14 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/epost.fcgi?db=gene&id=7173,22018,54314,403521,525013"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/epost.fcgi?db=gene&id=7173,22018,54314,403521,525013`}
                 </a>
             </div>
             <div className='mt-4'>
                 This will also return a WebEnvId which you can use in a subsequent request.
             </div>
-            <div className="mt-4 border border-gray-200 rounded bg-gray-50 h-86 py-4 px-8">
+            <div className="text-sm mt-4 border border-gray-200 rounded-xl bg-gray-50 py-4 px-2 md:px-8">
                 <WebEnv />
             </div>
 
@@ -194,7 +190,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=16899775,33164953&version=2.0"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=16899775,33164953&version=2.0`}
                 </a>
             </div>
@@ -226,7 +222,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=34577062,24475906&rettype=json&retmode=text"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=34577062,24475906&rettype=json&retmode=text`}
                 </a>
             </div>
@@ -260,7 +256,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi?term=rhuinitis&db=pubmed"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi?term=rhuinitis&db=pubmed`}
                 </a>
             </div>
@@ -299,7 +295,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pubmed&id=34525277"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&db=pubmed&id=34525277`}
                 </a>
             </div>
@@ -331,7 +327,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&retmode=json&sort=pub_date"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&retmode=json&sort=pub_date`}
                 </a>
             </div>
@@ -340,7 +336,7 @@ export default function Pubmed() {
                 <p className="mt-2 ml-4">Search field. If used, the entire search term will be limited to the specified Entrez field. The following two URLs are equivalent:</p>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&retmode=json&sort=pub_date"
                     target="_blank"
-                    className="text-indigo-400 ml-4">
+                    className="text-indigo-400 ml-4 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=science[journal]+AND+breast+cancer+AND+2008[pdat]&retmode=json&sort=pub_date`}
                 </a>
 
@@ -366,12 +362,12 @@ export default function Pubmed() {
                 <StepLargeCustom number="8" title="Database Statistics And Search Fields" />
             </div>
             <div className='mt-4'>
-                <HighlightBox><strong>Endpoint</strong></HighlightBox>
+                <HighlightBox className='font-semibold'>Endpoint: </HighlightBox>
                 <span className="bg-pink-100 rounded ml-2">{`einfo.fcgi?db=<database>`}</span>
 
             </div>
             <div className="mt-4">
-                <HighlightBox><strong>Output: </strong></HighlightBox>
+                <HighlightBox className='font-semibold'>Output: </HighlightBox>
                 <span className="ml-2">
                     XML containing database statistics
                 </span>
@@ -380,7 +376,7 @@ export default function Pubmed() {
                 Note: If no database parameter is supplied, einfo will return a list of all valid Entrez databases
             </div>
             <div className="mt-4">
-                <HighlightBox><strong>Example: </strong></HighlightBox>
+                <HighlightBox className='font-semibold'>Example: </HighlightBox>
                 <span className="ml-2">
                     Find database statistics for Entrez Pubmed
                 </span>
@@ -388,12 +384,12 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed"
                     target="_blank"
-                    className="text-indigo-400">
+                    className="text-indigo-400 break-words">
                     {`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=pubmed`}
                 </a>
             </div>
             <div className='mt-4'>
-                Use <strong>&retmode=json</strong> to get the json output
+                Use <span className="font-semibold">&retmode=json</span> to get the json output
             </div>
             <div className='mt-8'>
                 Have questions on above, shoot me a chat in the box below.

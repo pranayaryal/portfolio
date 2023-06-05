@@ -35,14 +35,14 @@ export default function Navbar() {
                         className='flex flex-row md:flex-col items-start relative px-4 md:px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative'
                         id='nav'
                     >
-                        <div className='flex flex-row md:flex-col space-x-0 pr-10 mb-2 md:mt-0'>
+                        <div className='flex flex-row md:flex-col space-x-2 md:space-x-0 pr-10 mb-2 md:mt-0'>
                             {Object.entries(navItems).map(([path, { name }]) => {
                                 const isActive = path === pathname;
                                 return (<Link
                                     key={path}
                                     href={path}
                                     className={clsx(
-                                        'transition-all hover:text-neutral-500 flex align-middle',
+                                        'transition-all hover:text-neutral-500 flex align-middle text-lg',
                                         {
                                             // 'text-neutral-500': !isActive,
                                             'font-bold text-white': isActive,

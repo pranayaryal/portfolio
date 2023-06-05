@@ -11,7 +11,7 @@ export default function Home() {
         <h2 className={`mb-2 md:mb-3 lg:text-2xl font-semibold`}>
           PubMed Api{' '}
         </h2>
-        <p className={`lg:block m-0 max-w-[30ch] text-sm opacity-50`}>
+        <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
           How to use pubMed Api.
         </p>
       </a>
