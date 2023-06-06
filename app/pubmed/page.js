@@ -3,6 +3,11 @@ import StepLargeCustom from '../../components/StepLargeCustom'
 import HighlightBox from '../../components/HighLightBox'
 import WebEnv from '../../components/webEnv'
 
+export const metadata = {
+    title: 'Pubmed Api',
+    description: 'Description of Pubmed Api and includes a demo of pubmed api to look for Randomized Controlled Trials',
+}
+
 
 
 export default function Pubmed() {

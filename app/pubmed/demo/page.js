@@ -10,12 +10,6 @@ const SUMMARY_ENDPOINT = `esummary.fcgi?db=pubmed&version=2.0&retmode=json&id=`
 const SPELLING_ENDPOINT = `espell.fcgi?db=pubmed&term=rhuinitis`
 const RELATED_ENDPOINT = `elink.fcgi?dbfrom=pubmed&db=pubmed&id=`
 
-export const metadata = {
-    title: 'Pubmed Api for Randomized Controlled Trials',
-    description: 'A simple demo on how to use pubmed api to search for Randomized Controlled Trials',
-}
-
-
 
 const Demo = () => {
     const [search, setSearch] = useState("")
