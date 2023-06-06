@@ -1,4 +1,9 @@
 
+export const metadata = {
+    title: 'About Pranay Aryal',
+    description: 'About Pranay Aryal',
+}
+
 export default function AboutPage() {
     return (
 

@@ -7,7 +7,27 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Pranay Aryal',
-  description: 'portfolio website',
+  description: 'Pranay Aryal is a software engineer. He is a full-stack developer with a passion for building products that are scalable and user-friendly.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://pranaysite.com',
+    title: 'Pranay Aryal',
+    description: 'Pranay Aryal is a software engineer. He is a full-stack developer with a passion for building products that are scalable and user-friendly.',
+    site_name: 'Pranay Aryal',
+  },
+  robots: {
+    follow: true,
+    index: true,
+    googleBot: {
+      follow: true,
+      index: true,
+      'max_video_preview': -1,
+      'max_image_preview': 'large',
+      'max_snippet': -1,
+    }
+  }
+
 }
 
 export default function RootLayout({ children }) {
