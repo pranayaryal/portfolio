@@ -99,13 +99,14 @@ export default function Pubmed() {
             <hr className='my-4' />
             <StepLargeCustom number="2" title="Basic Searching" className='mt-16' />
             <div className='mt-4 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2'>
-                <p><HighlightBox>Endpoint:</HighlightBox></p>
+                <HighlightBox>Endpoint:</HighlightBox>
                 <span className="bg-pink-100 rounded px-4 py-2 md:p-0">{`esearch.fcgi?db=<database>&term=<query>`}</span>
             </div>
             <div className="mt-4">
                 By utilizing this API endpoint, you can initiate a search for a specific term, and in response, you will receive a collection of UIDs, which serve as unique identifiers for articles.
             </div>
-            <p className='mt-4'><HighlightBox className='font-semibold'>Functions:</HighlightBox> Provides a list of UIDs matching a text query.</p>
+            <HighlightBox className='font-semibold mt-4'>Functions:</HighlightBox>
+            <span>Provides a list of UIDs matching a text query.</span>
             <p className='mt-4'><HighlightBox>UID:</HighlightBox> Unique Identifier</p>
             <p className='mt-4'>BaseUrl: 
                 <span className="bg-pink-100 rounded break-words">{` https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed`}</span></p>
