@@ -50,7 +50,7 @@ const NextWithPostGres = () => {
                     <CodeAmber>PGPASSWORD</CodeAmber><br/>
                     <CodeViolet>port:</CodeViolet>
                     <CodeSky>process.env.</CodeSky>
-                    <CodeAmber>PGPORt</CodeAmber>
+                    <CodeAmber>PGPORT</CodeAmber>
                     {`})`}<br />
                 </div>
                 {`}`}<br /><br />
