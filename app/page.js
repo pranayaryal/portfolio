@@ -39,6 +39,18 @@ export default function Home() {
         </p>
       </a>
 
+      <a
+        href="/blog/laravel-with-nextjs"
+        className="group rounded-lg border border-transparent px-0 py-2 lg:px-5 lg:py-4 transition-colors hover:border-gray-300 hover:bg-gray-50"
+      >
+        <h2 className={`mb-2 md:mb-3 lg:text-2xl font-semibold`}>
+          Laravel with NextJs{' '}
+        </h2>
+        <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
+          How to use Next JS as front-end for Laravel
+        </p>
+      </a>
+
 
     </div>
   )
