@@ -14,17 +14,12 @@ const LaravelWithNext = () => {
         </svg>
       </div>
 
-      <p className="mt-8">Recently I was trying to connect a Next Js (13) application to a Laravel (10) application.</p>
-      <p>I faced some difficulty and I struggled for a few hours.</p>
-      <br />
-      <p>Noting some things down for my future forgetful self, hope it will help you.</p>
-      <p>I am using Laravel Sanctum for SPA authentication</p>
-      <br />
-      <p>Here is how I set up the <span className="bg-red-300 rounded px-1">app/config/cors.php</span>. Note that I added the login and logout routes as well</p>
-      <div className="bg-pink-100 mt-4 rounded-xl px-8 py-8">
+      <h1 className="mt-8 font-bold">How To Connect a Nextjs front-end with a Laravel Backend With Sanctum</h1>
+      <p className="mt-8">Here is how I set up the <span className="bg-red-300 rounded px-1">app/config/cors.php</span>. Note that I added the login and logout routes as well</p>
+      <div className="bg-pink-100 mt-12 rounded-xl p-8">
         <span className="mt-[-2px] text-sm">app/config/cors.php</span>
         <div className="mt-4 text-md">
-          <p>'paths' =&gt; ['api/*', 'sanctum/csrf-cookie', 'login', 'logout'],</p>
+          <p>'paths' =&gt; ['api/*', 'sanctum/csrf-cookie', 'login', 'logout', 'register'],</p>
           <p>'allowed_methods' =&gt; ['*'],</p>
           <p>'allowed_origins' =&gt; ['http://localhost:3000'],</p>
           <p>'allowed_origins_patterns' =&gt; [],</p>
@@ -39,19 +34,19 @@ const LaravelWithNext = () => {
       </div>
       <p className="mt-16">I installed Laravel Sanctum according to Laravel documentation</p>
       <div className="text-sm">
-        <div className="bg-gray-800 rounded-xl r p-4 mt-4 text-white">
+        <div className="bg-gray-800 rounded-xl r p-6 mt-8 text-white">
           composer require laravel/sanctum
         </div>
-        <div className="bg-gray-800 rounded-xl r p-4 mt-4 text-white">
+        <div className="bg-gray-800 rounded-xl r p-6 mt-4 text-white">
           php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
         </div>
-        <div className="bg-gray-800 rounded-xl r p-4 mt-4 text-white">
+        <div className="bg-gray-800 rounded-xl r p-6 mt-4 text-white">
           php artisan migrate
         </div>
       </div>
 
-      <p className="mt-16">This is how I set up my axios instance in my Next.js application once I 'npm install axios'</p>
-      <div className="bg-pink-100 rounded-xl text-lg p-4 mt-4">
+      <p className="mt-16">Setting up my axios instance after 'npm install axios'</p>
+      <div className="bg-pink-100 rounded-xl text-lg p-8 mt-8">
         <p>import Axios from 'axios'</p>
         <p> const axios = Axios.create(&#10100;</p>
         <p>baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,</p>
@@ -63,8 +58,10 @@ const LaravelWithNext = () => {
         <p className="mt-2">export default axios;</p>
       </div>
 
-      <p className="mt-4">The NEXT_PUBLIC_BACKEND_URL is the laravel endpoint (localhost:8000 if you served using 'php artisan serve').
-      You can set this up in your .env file.</p>
+      <div className="bg-pink-100 rounded-xl text-lg p-8 mt-8">
+        <p><span className="font-bold">.env</span></p>
+        <p className="mt-4">NEXT_PUBLIC_BACKEND_URL="http://localhost:8000"</p>
+      </div>
 
       <p className="mt-4">You will need to call the /sanctum/csrf-cookie endpoint from your nextjs application in laravel to set the authentication cookie</p>
       <p className="mt-4">This endpoint will be automatically available once you install Laravel Sanctum as described above</p>
