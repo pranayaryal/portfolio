@@ -1,4 +1,5 @@
-
+import CodeViolet from "@/components/CodeViolet";
+import { CodeSky, CodeAmber } from "@/components/CodeColors";
 
 const LaravelWithNext = () => {
   return (
@@ -16,55 +17,55 @@ const LaravelWithNext = () => {
 
       <h1 className="mt-8 font-bold">How To Connect a Nextjs front-end with a Laravel Backend With Sanctum</h1>
       <p className="mt-8">Here is how I set up the <span className="bg-red-300 rounded px-1">app/config/cors.php</span>. Note that I added the login and logout routes as well</p>
-      <div className="bg-pink-100 mt-12 rounded-xl p-8">
-        <span className="mt-[-2px] text-sm">app/config/cors.php</span>
+      <div className="bg-code-background mt-12 rounded-xl p-8 text-gray-300">
+          <span className="mt-[-2px] text-sm"><CodeViolet>app/config/cors.php</CodeViolet></span>
         <div className="mt-4 text-md">
-          <p>'paths' =&gt; ['api/*', 'sanctum/csrf-cookie', 'login', 'logout', 'register'],</p>
-          <p>'allowed_methods' =&gt; ['*'],</p>
-          <p>'allowed_origins' =&gt; ['http://localhost:3000'],</p>
-          <p>'allowed_origins_patterns' =&gt; [],</p>
-          <p>'allowed_headers' =&gt; ['*'],</p>
-          <p>'exposed_headers' =&gt; [],</p>
-          <p>'max_age' =&gt; 0,</p>
+          <p><CodeAmber>'paths' </CodeAmber>=&gt; <CodeSky>['api/*', 'sanctum/csrf-cookie', 'login', 'logout', 'register']</CodeSky>,</p>
+          <p><CodeAmber>'allowed methods' </CodeAmber>=&gt; <CodeSky>['*']</CodeSky>,</p>
+          <p><CodeAmber>'allowed_origins'</CodeAmber> =&gt; <CodeSky>['http://localhost:3000']</CodeSky>,</p>
+          <p><CodeAmber>'allowed_origins_patterns'</CodeAmber> =&gt; <CodeSky>[]</CodeSky>,</p>
+          <p><CodeAmber>'allowed_headers'</CodeAmber> =&gt; <CodeSky>['*']</CodeSky>,</p>
+          <p><CodeAmber>'exposed_headers'</CodeAmber> =&gt; <CodeSky>[]</CodeSky>,</p>
+          <p><CodeAmber>'max_age'</CodeAmber> =&gt; <CodeSky>0</CodeSky>,</p>
 
-          'supports_credentials' =&gt; true,
+          <CodeAmber>'supports_credentials'</CodeAmber> =&gt; <CodeSky>true</CodeSky>,
 
         </div>
 
       </div>
       <p className="mt-16">I installed Laravel Sanctum according to Laravel documentation</p>
       <div className="text-sm">
-        <div className="bg-gray-800 rounded-xl r p-6 mt-8 text-white">
-          composer require laravel/sanctum
+        <div className="bg-code-background rounded-xl r p-6 mt-8 text-gray-300">
+          <CodeViolet>composer require laravel/sanctum</CodeViolet>
         </div>
-        <div className="bg-gray-800 rounded-xl r p-6 mt-4 text-white">
-          php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+        <div className="bg-code-background rounded-xl r p-6 mt-4 text-white">
+          <CodeViolet>php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"</CodeViolet>
         </div>
-        <div className="bg-gray-800 rounded-xl r p-6 mt-4 text-white">
-          php artisan migrate
+          <div className="bg-code-background rounded-xl r p-6 mt-4 text-white">
+            <CodeViolet>php artisan migrate</CodeViolet>
         </div>
       </div>
 
       <p className="mt-16">Setting up my axios instance after 'npm install axios'</p>
-      <div className="bg-pink-100 rounded-xl text-lg p-8 mt-8">
-        <p>import Axios from 'axios'</p>
-        <p> const axios = Axios.create(&#10100;</p>
-        <p>baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,</p>
+      <div className="bg-code-background rounded-xl text-lg p-8 mt-8 text-gray-300">
+        <p>import <CodeViolet>Axios </CodeViolet>from <CodeSky>'axios'</CodeSky></p>
+        <p> const axios = <CodeViolet>Axios</CodeViolet>.create(&#10100;</p>
+        <p>baseURL: process.env.<CodeSky>NEXT_PUBLIC_BACKEND_URL</CodeSky>,</p>
         <p>headers: &#10100;</p>
-        <p className="ml-4">"X-Requested-With": "XMLHttpRequest"</p>
+        <p className="ml-4"><CodeAmber>"X-Requested-With": "XMLHttpRequest"</CodeAmber></p>
         <p>&#10101;,</p>
         <p className="ml-4">withCredentials: true</p>
         <p>&#10101;)</p>
-        <p className="mt-2">export default axios;</p>
+        <p className="mt-2"><CodeViolet>export default</CodeViolet> <CodeAmber>axios;</CodeAmber></p>
       </div>
 
-      <div className="bg-pink-100 rounded-xl text-lg p-8 mt-8">
+      <div className="bg-code-background text-gray-300 rounded-xl text-lg p-8 mt-8">
         <p><span className="font-bold">.env</span></p>
-        <p className="mt-4">NEXT_PUBLIC_BACKEND_URL="http://localhost:8000"</p>
+        <p className="mt-4"><span className="text-blue-300">NEXT_PUBLIC_BACKEND_URL</span><span className="text-orange-300">="http://localhost:8000"</span></p>
       </div>
 
-      <p className="mt-4">You will need to call the /sanctum/csrf-cookie endpoint from your nextjs application in laravel to set the authentication cookie</p>
-      <p className="mt-4">This endpoint will be automatically available once you install Laravel Sanctum as described above</p>
+      <p className="mt-12">You will need to call the /sanctum/csrf-cookie endpoint from your nextjs application in laravel to set the authentication cookie</p>
+      <p className="mt-4">This will be automatically available once you install Laravel Sanctum as described above</p>
 
       <p className="mt-4">I hope this helps.</p>
 
