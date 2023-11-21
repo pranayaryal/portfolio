@@ -58,7 +58,7 @@ export default function Pubmed() {
             <div className='mt-4'>
                 <span>See the demo </span>
                 <a
-                    href="/pubmed/demo"
+                    href="/pubmed/search-pubmed-randomized-controlled-trial"
                     className="text-indigo-400">here</a>
             </div>
             <h3 className="text-lg font-bold text-left mt-16 text-gray-900">
