@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '../components/sidebar'
 import Script from 'next/script'
+import Chat from '@/components/Chat'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
         <main className="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col px-2 md:px-0">
           {children}
         </main>
+        <Chat />
       </body>
     </html>
   )
