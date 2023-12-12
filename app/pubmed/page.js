@@ -86,11 +86,10 @@ export default function Pubmed() {
             </div>
             <div className="mt-4">
                 Example request including an API key:
-                <p className="mt-4 break-words">
-                    {/* <code className="bg-pink-100 rounded">esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345</code> */}
-                    esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345
-                </p>
             </div>
+            <p className="mt-4 break-words">
+                esummary.fcgi?db=pubmed&id=123456&api_key=ABCDE12345
+            </p>
             <p className="mt-4">
                 Example error message if rates are exceeded:
             </p>
@@ -108,7 +107,7 @@ export default function Pubmed() {
             <HighlightBox className='font-semibold mt-4'>Functions:</HighlightBox>
             <span>Provides a list of UIDs matching a text query.</span>
             <p className='mt-4'><HighlightBox>UID:</HighlightBox> Unique Identifier</p>
-            <p className='mt-4'>BaseUrl: 
+            <p className='mt-4'>BaseUrl:
                 <span className="bg-pink-100 rounded break-words">{` https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed`}</span></p>
             <p className='mt-4'><HighlightBox className='font-semibold'>Output:</HighlightBox>List of UIDs matching a query</p>
             <p className='mt-4'><HighlightBox>Example:</HighlightBox>
