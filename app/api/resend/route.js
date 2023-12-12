@@ -4,7 +4,7 @@ import { EmailTemplate } from '@/components/EmailTemplate'
 import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export default async function handler (req, res) {
+export async function GET (req, res) {
     console.log('you are here')
     const { email, message } = req.body
 
