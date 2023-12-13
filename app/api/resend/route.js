@@ -1,12 +1,11 @@
-'use client'
-
 import { EmailTemplate } from '@/components/EmailTemplate'
 import { Resend } from 'resend'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function GET (req, res) {
+export async function POST(req) {
     console.log('you are here')
-    const { email, message } = req.body
+    const { email, message } = await req.json()
+    console.log(email)
 
     try {
         const data = await resend.emails.send({
@@ -17,10 +16,10 @@ export async function GET (req, res) {
 
         })
         console.log("Data from email response: ", data)
-        res.status(200).json(data)
+        return Response.json({data})
 
     } catch (error) {
         console.log('there was erro')
-        res.status(400).json(error)
+        return Response.json({error})
     }
 }
