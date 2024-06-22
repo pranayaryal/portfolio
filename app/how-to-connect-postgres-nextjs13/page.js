@@ -7,7 +7,7 @@ const NextWithPostGres = () => {
         <div>
             <div className="flex flex-row space-x-6 items-center justify-start">
                 <img src='postgresql-icon.svg'/>
-                <h2 className='text-xl'>How To Connect postgres with NextJS 13</h2>
+                <h2 className='text-xl'>How To Connects postgres with NextJS 13</h2>
             </div>
             <p className="mt-8">I'm assuming that you have set up postgresql locally.</p>
             <p className="mt-4">I had a difficult time finding something online on this topic.</p>
