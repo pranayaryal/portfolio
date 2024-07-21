@@ -14,6 +14,8 @@ module.exports = {
       },
       backgroundColor: {
         'code-background': '#1a2a39',
+        'ubuntu-background': '#5e2750',
+        'vs-background': '#007ACC',
         'faded-background': 'rgba(255, 255, 255, 0.08)'
       }
     },

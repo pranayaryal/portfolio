@@ -12,7 +12,7 @@ export default function Home() {
           Search PubMed{' '}
         </h2>
         <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
-         Search PubMed for a Randomized Controlled Trial 
+         Search PubMed for a Randomized Controlled Trial
         </p>
       </a>
       <a
@@ -48,6 +48,18 @@ export default function Home() {
         </h2>
         <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
           How to use Next JS as front-end for Laravel
+        </p>
+      </a>
+
+      <a
+        href="/blog/configure-code-editor-for-large-language-models"
+        className="group rounded-lg border border-transparent px-0 py-2 lg:px-5 lg:py-4 transition-colors hover:border-gray-300 hover:bg-gray-50"
+      >
+        <h2 className={`mb-2 md:mb-3 lg:text-2xl font-semibold`}>
+          Setup a Code Editor with LLMs{' '}
+        </h2>
+        <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
+          How to use Neovim with Large Language Models
         </p>
       </a>
 
