@@ -32,11 +32,11 @@ const NeovimWithLlm = () => {
           </g>
         </g>
       </svg>
-      <h1 className="text-2xl font-bold mt-4">How To Configure a Large Language Model with Neovim</h1>
-      <h1 className="text-xl font-bold text-left mt-8 text-gray-900">
+      <h1 className="text-xl md:text-2xl font-bold mt-4">How To Configure a Large Language Model with Neovim</h1>
+      <h1 className="text-md md:text-xl font-bold text-left mt-8 text-gray-900">
         Table of contents:
       </h1>
-      <div className="mt-2 leading-7">
+      <div className="mt-2 leading-6 md:leading-7 text-sm md:text-md">
         <p>1. Why Should You Use A Large Language Model In Your Computer</p>
         <p>2. How to Download a Large Language Model (LLM)</p>
         <p>3. How to Set Up A Basic Neovim Code Editor</p>
@@ -46,19 +46,24 @@ const NeovimWithLlm = () => {
       <p className='mt-8'>I also created a video on this.</p>
       <iframe className="w-[95%] mt-4" width="560" height="315" src="https://www.youtube.com/embed/oQnXAOjMQOw?si=0SIOD-3XRiclECSp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
-      <h1 className='font-bold mt-16 text-xl'>Why Should You Use a Large Language Model In Your Computer</h1>
-      <p className='mt-4'>You can download LLMs and use it as a compressed form of internet without you needing an internet connection.</p>
-      <p className='mt-2'>This is better than ChatGPT because you don't have to give your data away.</p>
-      <p className='mt-2'>Software developers like me can use LLMs to answer their questions and to understand code written by someone else.</p>
-      <p className='mt-2'>Writers can leverage this tool to refine their concepts and rephrase their linguistic expressions</p>
+      <h1 className='font-bold mt-16 text-md md:text-xl'>Why Should You Use a Large Language Model In Your Computer</h1>
+      <div className='text-sm md:text-md'>
+        <p className='mt-6'>You can download LLMs and use it as a compressed form of internet without you needing an internet connection.</p>
+        <p className='mt-4 md:mt-2'>This is better than ChatGPT because you don't have to give your data away.</p>
+        <p className='mt-4 md:mt-2'>Software developers like me can use LLMs to answer their questions and to understand code written by someone else.</p>
+        <p className='mt-4 md:mt-2'>Writers can leverage this tool to refine their concepts and rephrase their linguistic expressions</p>
+      </div>
 
 
-      <h1 className='font-bold mt-16 text-xl'>How To Download a Large Language Model</h1>
-      <p className='mt-4'><a href="https://ollama.com/" className='text-blue-500' target="__blank">Ollama</a> is a great tool that packages LLMs in a way you can use in your computer.</p>
-      <p className='mt-2'>You can download the <span className='text-blue-500'>llama3</span> model</p>
-      <p className='mt-2'>After you download ollama you can use the below command command; the model will download and a chat will open up in the terminal</p>
-      <p className='mt-2'>You can use it as a chat interface to ask any questions.</p>
-      <p className='mt-2'>This chat is also available through an API endpoint which will be used in your neovim</p>
+      <h1 className='font-bold mt-8 md:mt-16 text-md md:text-xl'>How To Download a Large Language Model</h1>
+      <div className='text-sm md:text-md'>
+        <p className='mt-6 md:mt-4'><a href="https://ollama.com/" className='text-blue-500' target="__blank">Ollama</a> is a great tool that packages LLMs in a way you can use in your computer.</p>
+        <p className='mt-4 md:mt-2'>You can download the <span className='text-blue-500'>llama3</span> model</p>
+        <p className='mt-4 md:mt-2'>After you download ollama you can use the below command command; the model will download and a chat will open up in the terminal</p>
+        <p className='mt-4 md:mt-2'>You can use it as a chat interface to ask any questions.</p>
+        <p className='mt-4 md:mt-2'>This chat is also available through an API endpoint which will be used in your neovim</p>
+
+      </div>
       <div className='bg-ubuntu-background rounded-md px-3 py-3 mt-4'>
         <div className='flex space-x-2 items-center'>
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
@@ -111,10 +116,10 @@ const NeovimWithLlm = () => {
         <a target="__blank" className='text-blue-500' href="https://github.com/David-Kunz/gen.nvim"> repository</a> by David Kunz</p>
       <p className="mb-4 mt-4">You will see this code in the README.md. Add this code to your <span className='bg-orange-400 px-1 rounded-sm'>init.lua</span> file</p>
 
-      <div className="flex mt-4 text-white rounded-md text-sm">
-        <div className='flex bg-vs-background w-[45px] py-2 px-2'>
+      <div className="flex mt-4 text-white rounded-md text-xs md:text-sm">
+        <div className='hidden md:block bg-vs-background w-[45px] py-2 px-2'>
         </div>
-        <div className='bg-code-background py-4 px-8 relative'>
+        <div className='bg-code-background py-4 px-6 md:px-8 relative'>
           <p className='text-xs absolute right-2 top-1'>Add this to your ~/.config/nvim/init.lua</p>
           <span className='mt-4'>{`{`}</span>
           <p className='ml-4'><CodeViolet>"David-Kunz/gen.nvim",</CodeViolet></p>
