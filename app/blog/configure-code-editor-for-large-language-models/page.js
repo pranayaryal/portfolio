@@ -1,6 +1,7 @@
 
 import CodeViolet from "@/components/CodeViolet";
 import { CodeSky, CodeAmber } from "@/components/CodeColors";
+import StepLargeCustom from '@/components/StepLargeCustom'
 
 const NeovimWithLlm = () => {
   return (
@@ -36,7 +37,7 @@ const NeovimWithLlm = () => {
       <h1 className="text-md md:text-xl font-bold text-left mt-8 text-gray-900">
         Table of contents:
       </h1>
-      <div className="mt-2 leading-6 md:leading-7 text-sm md:text-md">
+      <div className="mt-2 leading-6 md:leading-7">
         <p>1. Why Should You Use A Large Language Model In Your Computer</p>
         <p>2. How to Download a Large Language Model (LLM)</p>
         <p>3. How to Set Up A Basic Neovim Code Editor</p>
@@ -46,24 +47,21 @@ const NeovimWithLlm = () => {
       <p className='mt-8'>I also created a video on this.</p>
       <iframe className="w-[95%] mt-4" width="560" height="315" src="https://www.youtube.com/embed/oQnXAOjMQOw?si=0SIOD-3XRiclECSp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
-      <h1 className='font-bold mt-16 text-md md:text-xl'>Why Should You Use a Large Language Model In Your Computer</h1>
-      <div className='text-sm md:text-md'>
-        <p className='mt-6'>You can download LLMs and use it as a compressed form of internet without you needing an internet connection.</p>
-        <p className='mt-4 md:mt-2'>This is better than ChatGPT because you don't have to give your data away.</p>
-        <p className='mt-4 md:mt-2'>Software developers like me can use LLMs to answer their questions and to understand code written by someone else.</p>
-        <p className='mt-4 md:mt-2'>Writers can leverage this tool to refine their concepts and rephrase their linguistic expressions</p>
-      </div>
+
+      <StepLargeCustom number="1" title="Why Should You Use a Large Language Model In Your Computer" className='mt-8' />
+      <p className='mt-6'>You can download LLMs and use it as a compressed form of internet without you needing an internet connection.</p>
+      <p className='mt-4 md:mt-2'>This is better than ChatGPT because you don't have to give your data away.</p>
+      <p className='mt-4 md:mt-2'>Software developers like me can use LLMs to answer their questions and to understand code written by someone else.</p>
+      <p className='mt-4 md:mt-2'>Writers can leverage this tool to refine their concepts and rephrase their linguistic expressions</p>
 
 
-      <h1 className='font-bold mt-8 md:mt-16 text-md md:text-xl'>How To Download a Large Language Model</h1>
-      <div className='text-sm md:text-md'>
-        <p className='mt-6 md:mt-4'><a href="https://ollama.com/" className='text-blue-500' target="__blank">Ollama</a> is a great tool that packages LLMs in a way you can use in your computer.</p>
-        <p className='mt-4 md:mt-2'>You can download the <span className='text-blue-500'>llama3</span> model</p>
-        <p className='mt-4 md:mt-2'>After you download ollama you can use the below command command; the model will download and a chat will open up in the terminal</p>
-        <p className='mt-4 md:mt-2'>You can use it as a chat interface to ask any questions.</p>
-        <p className='mt-4 md:mt-2'>This chat is also available through an API endpoint which will be used in your neovim</p>
+      <StepLargeCustom number="2" title="How To Download a Large Language Model" className='mt-16' />
+      <p className='mt-6 md:mt-4'><a href="https://ollama.com/" className='text-blue-500' target="__blank">Ollama</a> is a great tool that packages LLMs in a way you can use in your computer.</p>
+      <p className='mt-4 md:mt-2'>You can download the <span className='text-blue-500'>llama3</span> model</p>
+      <p className='mt-4 md:mt-2'>After you download ollama you can use the below command command; the model will download and a chat will open up in the terminal</p>
+      <p className='mt-4 md:mt-2'>You can use it as a chat interface to ask any questions.</p>
+      <p className='mt-4 md:mt-2'>This chat is also available through an API endpoint which will be used in your neovim</p>
 
-      </div>
       <div className='bg-ubuntu-background rounded-md px-3 py-3 mt-4'>
         <div className='flex space-x-2 items-center'>
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
@@ -105,16 +103,17 @@ const NeovimWithLlm = () => {
         </p>
       </div>
 
-      <h1 className='font-bold mt-12 text-2xl'>How To  Set Up A Basic Neovim Code Editor</h1>
+      <StepLargeCustom number="3" title="How To  Set Up A Basic Neovim Code Editor" className='mt-16' />
       <p className='mt-4'>Why Neovim?  This is a light-weighted code-editor that you can customize for yourself.</p>
       <p className='mt-2'>Here is a good <a
         href="https://www.youtube.com/watch?v=m8C0Cq9Uv9o&t=0s"
         target="__blank"
         className="bg-pink-50 cursor-pointer text-blue-500">tutorial.</a></p>
-      <h1 className='font-bold mt-12 text-2xl'>Install The Plugin gen.nvim In Your Neovim To Use an LLM</h1>
-      <p className='mt-2'>Once you have set up your <span className='text-red-500'>init.lua</span>, go to gen.nvim
+
+      <StepLargeCustom number="4" title="Install The Plugin gen.nvim In Your Neovim To Use an LLM" className='mt-16' />
+      <p className='mt-4'>Once you have set up your <span className='text-red-500'>init.lua</span>, go to gen.nvim
         <a target="__blank" className='text-blue-500' href="https://github.com/David-Kunz/gen.nvim"> repository</a> by David Kunz</p>
-      <p className="mb-4 mt-4">You will see this code in the README.md. Add this code to your <span className='bg-orange-400 px-1 rounded-sm'>init.lua</span> file</p>
+      <p className="mb-4 mt-4">You will see this code in the README.md. Add this code to your <span className='bg-orange-400 px-1 rounded-sm'>init.lua</span> file. Note that the model is 'llama3'</p>
 
       <div className="flex mt-4 text-white rounded-md text-xs md:text-sm">
         <div className='hidden md:block bg-vs-background w-[45px] py-2 px-2'>
@@ -151,21 +150,21 @@ const NeovimWithLlm = () => {
           <span>{`}`}</span>
         </div>
       </div>
-      <h1 className='font-bold mt-16 text-xl'>Use The Large Language Model In Your Code Editor</h1>
+      <StepLargeCustom number="5" title="Use The Large Language Model In Your Code Editor" className='mt-16' />
       <p className='mt-4'>Once you have added above to your init.lua file, close your neovim and reopen it</p>
       <p className='mt-4'>Let's say you want to ask a general question</p>
       <p className='mt-4'>Type colon (:) and then type 'Gen' like this (see bottom) and then press Enter.</p>
       <div className='mt-4 bg-code-background rounded-md relative'>
         <p>There are nice</p>
         <p>There are nice</p>
-        <div className='text-white text-sm'>
+        <div className='text-white text-xs md:text-sm'>
           <div className='flex justify-between items-center w-full'>
             <div className='flex'>
               <p className='bg-blue-500 px-2 text-black'>Normal</p>
               <p className='px-2'>Git main diff -</p>
               <p className='bg-gray-400 px-2 rounded-sm'>~/path/to/file</p>
             </div>
-            <div className='flex'>
+            <div className='hidden md:flex'>
               <p className='bg-gray-500 px-2 rounded-sm'>javascript utf-8[unix] 12.22Kib</p>
               <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
             </div>
@@ -178,7 +177,7 @@ const NeovimWithLlm = () => {
       <div className='mt-4 bg-code-background rounded-md relative'>
         <p>There are nice</p>
         <p>There are nice</p>
-        <div className='text-white text-sm'>
+        <div className='text-white text-xs md:text-sm'>
           <div className='flex flex-col items-center justify-center text-white w-2/3 mb-4'>
             <div className='border-orange-400 border flex flex-col px-3 rounded-md py-3'>
               <p></p>
@@ -202,7 +201,7 @@ const NeovimWithLlm = () => {
               <p className='px-2'>Git main diff -</p>
               <p className='bg-gray-400 px-2 rounded-sm'>~/path/to/file</p>
             </div>
-            <div className='flex'>
+            <div className='hidden md:flex'>
               <p className='bg-gray-500 px-2 rounded-sm'>javascript utf-8[unix] 12.22Kib</p>
               <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
             </div>
@@ -211,7 +210,7 @@ const NeovimWithLlm = () => {
         </div>
       </div>
       <p className='mt-12'>This will create a prompt input at the bottom of your screen where you can type your prompt and then press 'Enter'</p>
-      <div className='mt-4 bg-code-background rounded-md relative'>
+      <div className='mt-6 md:mt-4 bg-code-background rounded-md relative'>
         <p>There are nice</p>
         <p>There are nice</p>
         <div className='text-white text-sm'>
@@ -221,7 +220,7 @@ const NeovimWithLlm = () => {
               <p className='px-2'>Git main diff -</p>
               <p className='bg-gray-400 px-2 rounded-sm'>~/path/to/file</p>
             </div>
-            <div className='flex'>
+            <div className='hidden md:flex'>
               <p className='bg-gray-500 px-2 rounded-sm'>javascript utf-8[unix] 12.22Kib</p>
               <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
             </div>
@@ -232,32 +231,32 @@ const NeovimWithLlm = () => {
       <p className='mt-12'>You will see the answer appear in the right pane like this:</p>
       <div className='mt-4 bg-code-background rounded-md relative'>
         <div className='flex'>
-          <div className='flex flex-col justify-between w-1/2'>
+          <div className='flex flex-col justify-between w-2/3 md:w-1/2'>
             <div className='bg-code-background'>
             </div>
             <div>
-              <div className='mt-4 flex justify-start items-center w-full text-white text-xs'>
+              <div className='hidden mt-4 md:flex justify-start items-center w-full text-white text-xs'>
                 <p className='bg-blue-500 px-2 text-black'>Normal</p>
                 <p className='px-1'>Git main diff -</p>
                 <p className='bg-gray-400 px-1 text-black'>~/conftest.py</p>
                 <p className='bg-gray-500 px-2'>javascript</p>
                 <p className='bg-blue-400 text-black px-1'>140:36</p>
               </div>
-              <p className='text-white text-xs'>:Prompt: what does this code do<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
+              <p className='text-white text-xs'>:Prompt: closest plant to the sun<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
             </div>
           </div>
           <div className='text-white text-xs px-4 py-4 w-1/2 border-t border-orange-500 mt-2'>
             <p>The closest planet to the Sun is Mercury, with an average distance of about 58 million kilometers (36 million miles). However, if you're asking about the closest planet-like object or body to the Sun, that would be Venus.</p>
-            <p className='mt-4'>Venus is often referred to as Earth's "sister planet" because it's similar in size and mass to our own planet. It has a thick atmosphere that traps heat, making it the hottest planet in the solar system with surface temperatures reaching up to 462°C (863°F).</p>
-            <p className='mt-4'>The average distance between Venus and the Sun is about 108 million kilometers (67 million miles), which is relatively close compared to other planets. In fact, Venus is so close to the Sun that its highly elliptical orbit brings it as close as 107 million kilometers (66 million miles) during its closest approach, known as perihelion.</p>
-            <p className='mt-4'>So, while Mercury is the closest planet to the Sun in terms of average distance, Venus is the closest in terms of being a planet-like object that's similar in size and composition to our own planet Earth.</p>
+            <p className='hidden md:block mt-4'>Venus is often referred to as Earth's "sister planet" because it's similar in size and mass to our own planet. It has a thick atmosphere that traps heat, making it the hottest planet in the solar system with surface temperatures reaching up to 462°C (863°F).</p>
+            <p className='hidden md:block mt-4'>The average distance between Venus and the Sun is about 108 million kilometers (67 million miles), which is relatively close compared to other planets. In fact, Venus is so close to the Sun that its highly elliptical orbit brings it as close as 107 million kilometers (66 million miles) during its closest approach, known as perihelion.</p>
+            <p className='hidden md:block mt-4'>So, while Mercury is the closest planet to the Sun in terms of average distance, Venus is the closest in terms of being a planet-like object that's similar in size and composition to our own planet Earth.</p>
           </div>
         </div>
       </div>
-      <p className='mt-4'>Or you could highlight your code, type 'Gen' and ask a question like this</p>
+      <p className='mt-8 text-sm md:text-md'>Or you could highlight your code, type 'Gen' and ask a question like this</p>
       <div className='mt-4 bg-code-background rounded-md relative'>
-        <div className='pl-4  pt-4 text-white text-sm'>
-          <div className='bg-gray-500 px-2 py-2 w-1/2 rounded-sm'>
+        <div className='pl-4  pt-4 text-white text-xs md:text-sm'>
+          <div className='bg-gray-500 px-2 py-2 w-4/5 md:w-1/2 rounded-sm'>
             <p><CodeViolet>def </CodeViolet><CodeSky>pytest_collection_modifyitems</CodeSky>(<CodeAmber>config, items</CodeAmber>):</p>
             <p className='ml-4'>{`requires_trainable_backend = pytest.mark.skipif(`}</p>
             <p className='ml-6'><CodeSky>backend() </CodeSky><span className="text-green-300">= "numpy"</span></p>
@@ -268,14 +267,14 @@ const NeovimWithLlm = () => {
             <p className='ml-12'>{`item.add_marker(requires_trainable_backend)`}</p>
           </div>
         </div>
-        <div className='text-white text-sm mt-4'>
+        <div className='text-white text-xs md:text-sm mt-4'>
           <div className='flex justify-between items-center w-full'>
             <div className='flex'>
               <p className='bg-blue-500 px-2 text-black'>Normal</p>
               <p className='px-2'>Git main diff -</p>
               <p className='bg-gray-400 px-2 rounded-sm'>~/path/to/file</p>
             </div>
-            <div className='flex'>
+            <div className='hidden md:flex'>
               <p className='bg-gray-500 px-2 rounded-sm'>python utf-8[unix] 12.22Kib</p>
               <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
             </div>
@@ -283,10 +282,10 @@ const NeovimWithLlm = () => {
           <p>{`:'<,'>Gen`}<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
         </div>
       </div>
-      <p className='mt-4'>This will open a prompt like below</p>
-      <div className='mt-4 bg-code-background rounded-md flex'>
+      <p className='mt-8 text-sm md:text-md'>If you click on 'Ask', it will open a prompt like below</p>
+      <div className='mt-4 bg-code-background rounded-md flex-col md:flex-row'>
         <div className='flex flex-col justify-between'>
-          <div className='pl-4  pt-2 text-white text-sm'>
+          <div className='pl-4  pt-2 text-white text-xs md:text-sm'>
             <p><CodeViolet>def </CodeViolet><CodeSky>pytest_collection_modifyitems</CodeSky>(<CodeAmber>config, items</CodeAmber>):</p>
             <p className='ml-4'>{`requires_trainable_backend = pytest.mark.skipif(`}</p>
             <p className='ml-6'><CodeSky>backend() </CodeSky><span className="text-green-300">= "numpy"</span></p>
@@ -296,19 +295,7 @@ const NeovimWithLlm = () => {
             <p className='ml-8'>if <CodeAmber>"requires_trainable_backend"</CodeAmber> <CodeSky>in</CodeSky> item.keywords:</p>
             <p className='ml-12'>{`item.add_marker(requires_trainable_backend)`}</p>
           </div>
-          <div className='flex justify-between items-center w-full text-xs'>
-            <div className='flex'>
-              <p className='bg-blue-500 px-2 text-black'>Normal</p>
-              <p className='px-2 text-white'>Git main diff -</p>
-              <p className='bg-gray-400 px-2 rounded-sm'>~/conftest.py</p>
-            </div>
-            <div className='flex'>
-              <p className='bg-gray-500 px-2 rounded-sm'>python</p>
-              <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
-            </div>
-          </div>
-        </div>
-        <div className='flex flex-col items-center justify-center text-white mb-4 text-sm py-3 px-4'>
+        <div className='flex flex-col items-center justify-center text-white mb-4 text-xs md:text-sm py-3 px-4'>
           <div className='border-orange-400 border flex flex-col px-3 rounded-md py-3'>
             <p></p>
             <p className='bg-gray-500 px-2 rounded-sm bg-gray-500'>Ask</p>
@@ -323,11 +310,23 @@ const NeovimWithLlm = () => {
             <p>Make List</p>
             <p>Make Table</p>
           </div>
-
+        </div>
+          <div className='flex justify-between items-center w-full text-xs'>
+            <div className='flex'>
+              <p className='bg-blue-500 px-2 text-black'>Normal</p>
+              <p className='px-2 text-white'>Git main diff -</p>
+              <p className='bg-gray-400 px-2 rounded-sm'>~/conftest.py</p>
+            </div>
+            <div className='flex'>
+              <p className='bg-gray-500 px-2 rounded-sm'>python</p>
+              <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className='mt-4 bg-code-background rounded-md relative'>
-        <div className='pl-4  pt-2 text-white text-sm'>
+      <p className='mt-8 text-sm md:text-md'>Then it will open a prompt input like below</p>
+      <div className='mt-4 bg-code-background rounded-md relative text-xs md:text-sm'>
+        <div className='pl-4  pt-2 text-white'>
           <p><CodeViolet>def </CodeViolet><CodeSky>pytest_collection_modifyitems</CodeSky>(<CodeAmber>config, items</CodeAmber>):</p>
           <p className='ml-4'>{`requires_trainable_backend = pytest.mark.skipif(`}</p>
           <p className='ml-6'><CodeSky>backend() </CodeSky><span className="text-green-300">= "numpy"</span></p>
@@ -337,28 +336,26 @@ const NeovimWithLlm = () => {
           <p className='ml-8'>if <CodeAmber>"requires_trainable_backend"</CodeAmber> <CodeSky>in</CodeSky> item.keywords:</p>
           <p className='ml-12'>{`item.add_marker(requires_trainable_backend)`}</p>
         </div>
-        <div className='text-white text-sm'>
-          <div className='mt-4 flex justify-between items-center w-full'>
-            <div className='flex'>
-              <p className='bg-blue-500 px-2 text-black'>Normal</p>
-              <p className='px-2'>Git main diff -</p>
-              <p className='bg-gray-400 px-2 rounded-sm'>~/conftest.py</p>
-            </div>
-            <div className='flex'>
-              <p className='bg-gray-500 px-2 rounded-sm'>javascript utf-8[unix] 12.22Kib</p>
-              <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
-            </div>
+        <div className='flex justify-between items-center w-full text-xs mt-8'>
+          <div className='flex'>
+            <p className='bg-blue-500 px-2 text-black'>Normal</p>
+            <p className='px-2 text-white'>Git main diff -</p>
+            <p className='bg-gray-400 px-2 rounded-sm'>~/conftest.py</p>
           </div>
-          <p>:Prompt: what does this code do<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
+          <div className='flex'>
+            <p className='bg-gray-500 px-2 rounded-sm'>python</p>
+            <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
+          </div>
         </div>
+        <p className='text-white'>:Prompt: what does this code do<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
       </div>
-      <p className='mt-4'>Your screen will be split. Explanations will appear on the right side.</p>
+      <p className='mt-4 text-sm md:text-md'>Your screen will be split.</p>
 
       <div className='mt-4 bg-code-background rounded-md relative'>
-        <div className='flex'>
+        <div className='flex flex-col md:flex-row'>
           <div>
-            <div className='pl-4 pt-4 text-white text-sm'>
-              <div className='bg-gray-500 p-4 rounded-sm'>
+            <div className='px-4 pt-4 text-white text-xs md:text-sm'>
+              <div className='bg-gray-500  p-4 rounded-sm'>
                 <p><CodeViolet>def </CodeViolet><CodeSky>pytest_collection_modifyitems</CodeSky>(<CodeAmber>config, items</CodeAmber>):</p>
                 <p className='ml-4'>{`requires_trainable_backend = pytest.mark.skipif(`}</p>
                 <p className='ml-6'><CodeSky>backend() </CodeSky><span className="text-green-300">= "numpy"</span></p>
@@ -369,16 +366,8 @@ const NeovimWithLlm = () => {
                 <p className='ml-12'>{`item.add_marker(requires_trainable_backend)`}</p>
               </div>
             </div>
-            <div className='mt-4 flex items-center w-full text-white text-xs'>
-              <p className='bg-blue-500 px-2 text-black'>Normal</p>
-              <p className='px-1'>Git main diff -</p>
-              <p className='bg-gray-400 px-1 text-black'>~/conftest.py</p>
-              <p className='bg-gray-500 px-2'>javascript</p>
-              <p className='bg-blue-400 text-black px-1'>140:36</p>
-            </div>
-            <p className='text-white text-xs'>:Prompt: what does this code do<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
           </div>
-          <div className='text-white text-xs px-8 py-4'>
+          <div className='text-white text-xs px-8 py-4 border-orange-400 border-top'>
             <p>This is a custom hook function in Pytest that modifies the test collection. Specifically, it adds markers to certain test items based on their keywords.</p>
             <p className='mt-4'>Here is what it does:</p>
             <p><CodeAmber>1.</CodeAmber> It defines a marker `requires_trainable_backend` using the `pytest.mark.skipif` function. This marker will be added to test items that require a trainable backend (e.g., TensorFlow or PyTorch).</p>
@@ -386,6 +375,20 @@ const NeovimWithLlm = () => {
             <p><CodeAmber>3.</CodeAmber> For each item, it checks if the item has a keyword called `"requires_trainable_backend"`. This is done using the `in` operator and the `item.keywords` dictionary.</p>
 
           </div>
+        </div>
+        <div className='text-white text-xs md:text-sm'>
+          <div className='mt-4 flex md:justify-between items-center w-full'>
+            <div className='flex'>
+              <p className='bg-blue-500 px-2 text-black'>Normal</p>
+              <p className='px-2'>Git main diff -</p>
+              <p className='bg-gray-400 px-2 rounded-sm'>~/conftest.py</p>
+            </div>
+            <div className='hidden md:flex'>
+              <p className='bg-gray-500 px-2 rounded-sm'>javascript utf-8[unix] 12.22Kib</p>
+              <p className='bg-blue-400 text-black px-2 rounded-sm'>140:36</p>
+            </div>
+          </div>
+          <p>:Prompt: what does this code do<span className='ml-1 bg-gray-500 px-1 py-[0.5px]'></span></p>
         </div>
       </div>
     </div>
