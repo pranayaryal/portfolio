@@ -71,7 +71,7 @@ export default function Home() {
           Address Cleaning with USPS Api
         </h2>
         <p className={`lg:block m-0 max-w-[30ch] opacity-50`}>
-          How to Clean US Addresses with the USPS Api
+          How to Clean US Addresses with the USPS API
         </p>
       </a>
 
