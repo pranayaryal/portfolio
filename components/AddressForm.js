@@ -151,7 +151,7 @@ const AddressForm = () => {
   return (
     <div className='bg-white py-6 px-5 w-full flex flex-col'>
             <>
-              <p className='text-xs mt-2'>Enter your address</p>
+              <p className='text-xs mt-2'>Enter an address. You can copy from Google Maps</p>
               <div className='flex flex-col mt-4'>
                 <label className='text-xs'>Address</label>
                 <input
