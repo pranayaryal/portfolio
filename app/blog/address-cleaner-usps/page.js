@@ -73,13 +73,28 @@ const AddressCleanerUsps = () => {
 				How Do I Clean Up Or Scrub Address Data?
 			</h1>
 			<div className='leading-7'>
-				<p className='mt-8'>The USPS offers a service which software developers can use. This can be useful in e-commerce websites where accurate delivery is needed.  The USPS doesn't allow this service to be used to clean addresses in bulk.  Addresses can only be cleaned one at a time.  Developers or the business will need to open a business account and register their application.</p>
+				<p className='mt-8'>The USPS offers a service which software developers can use. This can be useful in e-commerce websites where accurate delivery is needed. Developers or the business will need to open a business account and register their application.</p>
+				<p className='mt-4'>Note that the USPS doesn't allow this service to be used to clean addresses in bulk</p>
 				<p className='mt-4'>The application needs to be registered in the USPS developer portal after which an api key and api secret will be granted.</p>
-				<p className='mt-4'>Here is how a developer may do it (Using Next.js):</p>
-				<p className='mt-4'>You will first need to get the token using your credentials and making a POST request to the USPS oauth2 api endpoint</p>
-				<p className='mt-4'>You will then use the token to make another GET request to clean the address</p>
+				<p className='mt-4'>Here is how a developer may do it:</p>
+				<div className='flex space-x-8 items-center mt-4'>
+				  <div>
+				    <div className='bg-dot-color w-2 h-2 rounded-full'></div>
+				  </div>
+			          <div>
+					 <p>Make a POST request to the USPS oauth2 api endpoint to get the token</p>   
+				  </div>
+				</div>
+				<div className='flex space-x-8 items-center mt-4'>
+				  <div>
+				    <div className='bg-dot-color w-2 h-2 rounded-full'></div>
+				  </div>
+			          <div>
+					 <p>Then make a GET request to the /v3/address endpoint using the above token</p>   
+				  </div>
+				</div>
 			</div>
-			<div className="flex mt-4 text-white rounded-md text-xs md:text-sm">
+			<div className="flex mt-8 text-white rounded-md text-xs md:text-sm">
 				<div className='hidden md:block bg-vs-background w-[45px] py-2 px-2'>
 				</div>
 				<div className='bg-code-background py-4 px-6 md:px-8 relative'>
